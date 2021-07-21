@@ -6,7 +6,8 @@ namespace EmployeeWageCalculation
 {
     class EmpCheck
     {
-        public void AtendanceCheck(int empPresent)
+        
+       /* public void AtendanceCheck(int empPresent)
         {
             if (empPresent == 1)
             {
@@ -18,6 +19,15 @@ namespace EmployeeWageCalculation
             }
 
         }
+       */
+       public void CalculateDailyWage()
+        {
+            int WorkHours = 8;
+            int WagePerHour = 20;
+            int DailyWage = WorkHours * WagePerHour;
+            Console.WriteLine(" DailyWage : " + DailyWage);
 
+        }
     }  
+
 }

@@ -11,7 +11,8 @@ namespace EmployeeWageCalculation
             int empPresent = random.Next(0, 2);
 
             EmpCheck ec = new EmpCheck();
-            ec.AtendanceCheck(empPresent);
+            ec.CalculateDailyWage();
+
 
         }
     }
