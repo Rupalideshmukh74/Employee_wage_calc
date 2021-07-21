@@ -22,10 +22,11 @@ namespace EmployeeWageCalculation
        */
        public void CalculateDailyWage()
         {
-            int WorkHours = 8;
+            //int FullTime = 8;
+            int PartTime = 4;
             int WagePerHour = 20;
-            int DailyWage = WorkHours * WagePerHour;
-            Console.WriteLine(" DailyWage : " + DailyWage);
+            int DailyPartWage = PartTime * WagePerHour;
+            Console.WriteLine(" DailyPartWage : " + DailyPartWage);
 
         }
     }  
