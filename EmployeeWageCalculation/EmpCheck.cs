@@ -6,47 +6,44 @@ namespace EmployeeWageCalculation
 {
     class EmpCheck
     {
-        
-        public void AtendanceCheck(int empPresent)
+
+        public const int IS_PART_TIME = 1;
+        public const int IS_FULL_TIME = 2;
+        public const int EMP_RATE_PER_HR = 20;
+        public const int NO_OF_WORKING_DAYS = 20;
+        public void CalculateDailyWage()
         {
-            if (empPresent == 1)
+            int WorkHours = 0; int empWage = 0; int totalWage = 0;
+            Console.WriteLine("daily Wage : ");
+            for (int day = 0; day < NO_OF_WORKING_DAYS; day++)
             {
-                Console.WriteLine(" Employee present. \n");
-            }
-            else
-            {
-                Console.WriteLine(" Employee absent. \n");
-            }
+                Random random = new Random();
+                int empPresent = random.Next(0, 3);
+                switch (empPresent)
+                {
+                    case IS_PART_TIME:
+                        //Console.WriteLine("Employee  present part time ");
+                        WorkHours = 4;
+                        break;
+                    case IS_FULL_TIME:
+                        // Console.WriteLine("Employee  present full time ");
+                        WorkHours = 8;
+                        break;
+                    default:
+                        //Console.WriteLine("Employee absent ");
+                        WorkHours = 0;
+                        break;
 
+
+                }
+                empWage = WorkHours * EMP_RATE_PER_HR;
+                totalWage += empWage;
+                Console.Write( " "+ empWage);
+
+
+            }
+            Console.WriteLine("\n Total Emp Wage : " + totalWage);
         }
-       
-       public void CalculateDailyWage(int emPresent)
-        {
-            //int FullTime = 8;
-          //  int PartTime = 4;
-            int WagePerHour = 20;
-            int WorkHours = 0;
-            switch(emPresent)
-            {
-                case 1:
-                    Console.WriteLine("Employee  present part time ");
-                    WorkHours = 4;
-                    break;
-                case 2:
-                    Console.WriteLine("Employee  present full time ");
-                    WorkHours = 8;
-                    break;
-                default:
-                    Console.WriteLine("Employee absent ");
-                    break;
-                    
 
-            }
-            Console.WriteLine("Calculating Emp Wage");
-            int DailyPartWage = WagePerHour * WorkHours;
-            Console.WriteLine(" DailyPartWage : " + DailyPartWage);
-
-        }
-    }  
-
+    }
 }
