@@ -11,12 +11,15 @@ namespace EmployeeWageCalculation
         public const int IS_FULL_TIME = 2;
         public const int EMP_RATE_PER_HR = 20;
         public const int NO_OF_WORKING_DAYS = 20;
+        public const int MAX_HOURS_MONTH = 100;
         public void CalculateDailyWage()
         {
-            int WorkHours = 0; int empWage = 0; int totalWage = 0;
+            int WorkHours = 0, empWage = 0, empHours=0, totalWage = 0,  totalWorkingDays = 0, totalhours = 0;
             Console.WriteLine("daily Wage : ");
-            for (int day = 0; day < NO_OF_WORKING_DAYS; day++)
+            while (totalhours <= MAX_HOURS_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
             {
+                totalWorkingDays++;
+
                 Random random = new Random();
                 int empPresent = random.Next(0, 3);
                 switch (empPresent)
@@ -36,6 +39,8 @@ namespace EmployeeWageCalculation
 
 
                 }
+                totalhours += empHours;
+                Console.WriteLine("Days# : " + totalWorkingDays + "Emp Hrs :" + empHours);
                 empWage = WorkHours * EMP_RATE_PER_HR;
                 totalWage += empWage;
                 Console.Write( " "+ empWage);
